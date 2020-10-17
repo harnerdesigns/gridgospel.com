@@ -35,7 +35,7 @@ const BlogIndex = ({ data, location }) => {
           </p>
           <p>
             Order{" "}
-            <a href="https://gum.co/grid-gospel?wanted=true">The Grid Gospel</a>{" "}
+            <a href="https://gum.co/grid-gospel">The Grid Gospel</a>{" "}
             Today And Receive:
           </p>
           <ul>

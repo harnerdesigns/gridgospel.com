@@ -14,7 +14,7 @@ const BuyButton = () => {
   return (
     <Button
           className="buy-button"
-          href="https://gum.co/grid-gospel?wanted=true"
+          href="https://gum.co/grid-gospel"
           target="_blank"
         >
           Buy Now &raquo;
