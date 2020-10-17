@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import OGImage from "../../content/assets/og-image.jpg"
 
 const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
@@ -37,6 +38,12 @@ const SEO = ({ description, lang, meta, title }) => {
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      // script={[
+      //   {
+      //     src: "https://gumroad.com/js/gumroad.js",
+      //     type: "text/javascript"
+      //   }
+      // ]}
       meta={[
         {
           name: `description`,
@@ -55,12 +62,20 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: OGImage,
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
           content: site.siteMetadata?.social?.twitter || ``,
+        },
+        {
+          property: `twitter:image`,
+          content: OGImage,
         },
         {
           name: `twitter:title`,

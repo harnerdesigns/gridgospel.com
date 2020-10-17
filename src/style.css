@@ -27,13 +27,10 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
+
+  --fontFamily-serif: "Times New Roman", Times, serif;
   --font-body: var(--fontFamily-serif);
-  --font-heading: var(--fontFamily-sans);
+  --font-heading: var(--fontFamily-serif);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -59,7 +56,9 @@
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
   --color-heading-black: black;
-  --color-accent: #d1dce5;
+  --color-accent: #f4e34a;
+
+  --border-radius: 0.5rem;
 }
 
 /* HTML elements */
@@ -81,6 +80,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background: #f4e34a;
 }
 
 footer {
@@ -230,7 +230,9 @@ table thead tr th {
 /* Link */
 
 a {
-  color: var(--color-primary);
+  font-weight: 900;
+  text-decoration: none;  
+  color: inherit;
 }
 
 a:hover,
@@ -242,8 +244,12 @@ a:focus {
 
 .global-wrapper {
   margin: var(--spacing-0) auto;
-  max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+  max-width: var(--maxWidth-full);
+}
+
+.global-wrapper main {
+  /* max-width: 80%; */
+  margin: 0 auto;
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -251,13 +257,18 @@ a:focus {
 }
 
 .global-header {
-  margin-bottom: var(--spacing-12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-5);
 }
 
 .main-heading {
   font-size: var(--fontSize-7);
   margin: 0;
 }
+
+.main-heading img {max-width: 20vw;}
 
 .post-list-item {
   margin-bottom: var(--spacing-8);
@@ -284,6 +295,9 @@ a:focus {
   font-family: var(--font-heading);
   text-decoration: none;
   font-size: var(--fontSize-2);
+}
+
+.buy-button {
 }
 
 .bio {
