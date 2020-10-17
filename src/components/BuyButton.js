@@ -8,7 +8,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const BuyButton = () => {
+const BuyButton = ({label}) => {
 
 
   return (
@@ -17,7 +17,7 @@ const BuyButton = () => {
           href="https://gum.co/grid-gospel"
           target="_blank"
         >
-          Buy Now &raquo;
+          {label || "Buy Now"} &raquo;
         </Button>
   )
 }

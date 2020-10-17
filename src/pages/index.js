@@ -52,7 +52,7 @@ const BlogIndex = ({ data, location }) => {
         </Block>
         <Block>
          <h1>Learn CSS Grid Today!</h1>
-         <BuyButton />
+         <BuyButton label="Get Your Copy" />
         </Block>
       </Grid>
     </Layout>
