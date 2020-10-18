@@ -6,7 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
-import Image from "../../content/assets/cover.png"
+import Image from "../../content/assets/cover-rounded.png"
+import pinwheel from "../../content/assets/white-pinwheel.png"
 import Logo from "../../content/assets/text-logo.svg"
 import Pages from "../../content/assets/pages.png"
 
@@ -71,10 +72,17 @@ const Grid = styled.section`
 
   width: 95%;
   margin: 0 auto;
+  background: url(${pinwheel}) no-repeat;
+  background-position: 50% 10%;
+  background-size: auto 80%;
+
 
   @media ${breakpoints.laptop} {
-    width: 80%;
+    width: 100%;
+    padding: 0 10vw;
   grid-template-columns: 1fr 1fr;
+  background-position: -40% 50%; 
+  background-size: 80% auto;
 
   }
 
