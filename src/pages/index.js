@@ -104,7 +104,7 @@ const Block = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 
   @media ${breakpoints.mobileOnly} {
