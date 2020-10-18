@@ -5,7 +5,7 @@ module.exports = {
       name: `Jack Harner`,
       summary: `who lives and works in Albuquerque, New Mexico building useful things.`,
     },
-    description: `The Grid Gospel -- An Intro To CSS`,
+    description: `The Grid Gospel is a 20+ page intro to CSS Grid. Learn the fundamentals and get started building complex layouts WITHOUT complex code.`,
     siteUrl: `https://gridgospel.com`,
     social: {
       twitter: `jackharner`,
@@ -50,6 +50,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

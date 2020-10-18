@@ -8,29 +8,33 @@
 import React from "react"
 import styled from "styled-components"
 
-const BuyButton = ({label}) => {
+import { breakpoints } from "../components/breakpoints"
 
 
+const BuyButton = ({ label }) => {
   return (
     <Button
-          className="buy-button"
-          href="https://gum.co/grid-gospel"
-          target="_blank"
-        >
-          {label || "Buy Now"} &raquo;
-        </Button>
+      className="buy-button"
+      href="https://gum.co/grid-gospel"
+      target="_blank"
+    >
+      {label || "Buy Now"} &raquo;
+    </Button>
   )
 }
 
 const Button = styled.a`
-
-padding: 1rem;
+  padding: 1rem;
   background: var(--color-heading-black);
-  color: var(--color-accent); 
+  color: var(--color-accent);
   text-decoration: none;
   border-radius: var(--border-radius);
-  font-weight: 900; font-size: 1.5rem;
+  font-weight: 900;
+  font-size: 1.25rem;
 
+  @media ${breakpoints.laptop} {
+    font-size: 1.5rem;
+  }
 `
 
 export default BuyButton

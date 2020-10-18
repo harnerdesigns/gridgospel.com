@@ -12,6 +12,9 @@ import Pages from "../../content/assets/pages.png"
 
 import BuyButton from "../components/BuyButton"
 
+import { breakpoints } from "../components/breakpoints"
+
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -63,14 +66,24 @@ export default BlogIndex
 
 const Grid = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  width: 80%;
+  grid-template-columns: 1fr;
+
+  width: 95%;
   margin: 0 auto;
+
+  @media ${breakpoints.laptop} {
+    width: 80%;
+  grid-template-columns: 1fr 1fr;
+
+  }
 
   img {
     width: 100%;
     display: block;
+    @media ${breakpoints.mobileOnly} {
+      grid-row: 1;
+    }
   }
 
   ul {
@@ -91,7 +104,18 @@ const Block = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
-  font-size: 3rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+
+  @media ${breakpoints.mobileOnly} {
+    a.buy-button{
+      width: 100%;
+      text-align:center;    }
+  }
+
+  @media ${breakpoints.laptop} {
+    font-size: 3rem;
+  }
   img {
     margin: 1rem;
   }
