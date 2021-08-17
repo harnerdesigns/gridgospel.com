@@ -10,7 +10,6 @@ import styled from "styled-components"
 
 import { breakpoints } from "../components/breakpoints"
 
-
 const BuyButton = ({ label }) => {
   return (
     <Button
@@ -31,9 +30,20 @@ const Button = styled.a`
   border-radius: var(--border-radius);
   font-weight: 900;
   font-size: 1.25rem;
-
+  position: relative;
   @media ${breakpoints.laptop} {
     font-size: 1.5rem;
+  }
+  &:after {
+    content: "Pay What You Want!";
+    position: absolute;
+    bottom: 0%;
+    color: #000;
+    font-size: 0.75em;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: auto;
+    white-space: nowrap;
   }
 `
 

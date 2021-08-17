@@ -5,6 +5,9 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
+import Circle from "../../content/assets/Circle.png"
+import Diamond from "../../content/assets/Diamond.png"
+import Triangle from "../../content/assets/Triangle.png"
 
 import Image from "../../content/assets/cover-rounded.png"
 import pinwheel from "../../content/assets/white-pinwheel.png"
@@ -14,7 +17,6 @@ import Pages from "../../content/assets/pages.png"
 import BuyButton from "../components/BuyButton"
 
 import { breakpoints } from "../components/breakpoints"
-
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -38,14 +40,21 @@ const BlogIndex = ({ data, location }) => {
             to be!
           </p>
           <p>
-            Order{" "}
-            <a href="https://gum.co/grid-gospel">The Grid Gospel</a>{" "}
-            Today And Receive:
+            Order <a href="https://gum.co/grid-gospel">The Grid Gospel</a> Today
+            And Receive:
           </p>
           <ul>
-            <li>20+ Pages of CSS Grid Awesome-ness</li>
-            <li>Live Code Examples Available Through CodePen</li>
-            <li>A Double-Sided Printable Cheatsheet</li>
+            <li>
+              <img src={Diamond} />
+              20+ Pages of CSS Grid Awesomeness
+            </li>
+            <li>
+              <img src={Circle} />
+              Live Code Examples Available Through CodePen
+            </li>
+            <li>
+              <img src={Triangle} />A Double-Sided Printable CSS Grid Cheatsheet
+            </li>
           </ul>
         </Block>
       </Column>
@@ -55,8 +64,8 @@ const BlogIndex = ({ data, location }) => {
           <img src={Pages} />
         </Block>
         <Block>
-         <h1>Learn CSS Grid Today!</h1>
-         <BuyButton label="Get Your Copy" />
+          <h1>Learn CSS Grid Today!</h1>
+          <BuyButton label="Get Your Copy" />
         </Block>
       </Grid>
     </Layout>
@@ -76,14 +85,12 @@ const Grid = styled.section`
   background-position: 50% 10%;
   background-size: auto 80%;
 
-
   @media ${breakpoints.laptop} {
     width: 100%;
     padding: 0 10vw;
-  grid-template-columns: 1fr 1fr;
-  background-position: -40% 50%; 
-  background-size: 80% auto;
-
+    grid-template-columns: 1fr 1fr;
+    background-position: -40% 50%;
+    background-size: 80% auto;
   }
 
   img {
@@ -95,10 +102,30 @@ const Grid = styled.section`
   }
 
   ul {
-    display: flex;
+    display: grid;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    grid-gap: 1rem;
+    @media ${breakpoints.laptop} {
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 70%;
+    }
+
+    li {
+      list-style: none;
+      font-size: 0.5em;
+      word-wrap: break-word;
+      padding: 1rem 2rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      img {
+        width: 50%;
+      }
+    }
   }
 `
 
@@ -116,9 +143,10 @@ const Block = styled.div`
   margin-bottom: 1rem;
 
   @media ${breakpoints.mobileOnly} {
-    a.buy-button{
+    a.buy-button {
       width: 100%;
-      text-align:center;    }
+      text-align: center;
+    }
   }
 
   @media ${breakpoints.laptop} {
