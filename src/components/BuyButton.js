@@ -35,7 +35,7 @@ const Button = styled.a`
     font-size: 1.5rem;
   }
   &:after {
-    content: "Pay What You Want!";
+    content: "Only $5!";
     position: absolute;
     bottom: 0%;
     color: #000;
