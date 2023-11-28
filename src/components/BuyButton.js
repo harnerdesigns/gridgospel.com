@@ -43,7 +43,7 @@ const Button = styled.a`
     left: 50%;
     transform: translate(-50%, 100%);
     width: auto;
-    white-space: nowrap;
+    white-space: nowrap; 
   }
 `
 
